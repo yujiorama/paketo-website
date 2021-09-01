@@ -3,7 +3,7 @@
     display: block;
     background: $light-background-color;
 
-    @media (min-width: $header-hamburger-breakpoint) {
+    @media (min-width: $docs-sidebar-breakpoint) {
         display: flex;
     }
 }
@@ -56,13 +56,13 @@
         top: auto;
         left: auto;
         height: auto;
-        overflow: auto;
+        overflow: visible;
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
         z-index: auto;
     }
 
-    @media (min-width: $header-hamburger-breakpoint) {
+    @media (min-width: $docs-sidebar-breakpoint) {
         width: 380px;
         padding-top: 50px;
         padding-left: 50px;
@@ -182,7 +182,7 @@
     position: absolute;
     right: 20px;
 
-    @media (min-width: $header-hamburger-breakpoint) {
+    @media (min-width: $docs-sidebar-breakpoint) {
         right: 0px;
     }
 }
@@ -235,7 +235,7 @@
     color: $link-text-color;
 }
 
-@media (min-width: $header-hamburger-breakpoint) {
+@media (min-width: $docs-sidebar-breakpoint) {
     .docs-menu {
 		padding-bottom: 0px;
 	}
@@ -260,7 +260,7 @@
     padding-top: 40px;
     padding-bottom: 40px;
 
-    @media (min-width: $header-hamburger-breakpoint) {
+    @media (min-width: $docs-sidebar-breakpoint) {
         width: calc(100% - 380px);
         display: flex;
         flex-direction: row;
