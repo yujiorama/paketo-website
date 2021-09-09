@@ -532,7 +532,7 @@ pack build samples/native -e BP_NATIVE_IMAGE=true --buildpack gcr.io/paketo-buil
 [gradle]:https://gradle.org/
 [java]:https://github.com/paketo-buildpacks/java
 [jconsole]:https://openjdk.java.net/tools/svc/jconsole/
-[jmx]:https://en.wikipedia.org/wiki/Java_Management_Extensions#:~:text=Java%20Management%20Extensions%20(JMX)%20is,MBeans%20(for%20Managed%20Bean)
+[jmx]:https://en.wikipedia.org/wiki/Java_Management_Extensions
 [kubernetes container resource]:https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#container-v1-core
 [leiningen]:https://leiningen.org/
 [liberica]:https://bell-sw.com/
@@ -540,7 +540,7 @@ pack build samples/native -e BP_NATIVE_IMAGE=true --buildpack gcr.io/paketo-buil
 [maven]:https://maven.apache.org/
 [oci config]:https://github.com/opencontainers/image-spec/blob/master/config.md#properties
 [sbt]:https://www.scala-sbt.org/index.html
-[spring boot actuator endpoints]:https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-endpoints
+[spring boot actuator endpoints]:https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints
 [spring boot configuration metadata]:https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-configuration-metadata.html
 [spring boot gradle plugin]:https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#build-image
 [spring boot gradle plugin]:https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#build-image
