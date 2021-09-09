@@ -14,13 +14,9 @@ BPL_[A-Z_]*(=.*)?
 BP_[A-Z_]*(=.*)?
 BellSoft
 Buildpack
-buildpack
-Buildpacks
-buildpacks
 Buildpack's
-buildpack's
 Buildpack\-[a-z]+
-buildpack\-[a-z]+
+Buildpacks
 Bundler
 BurntSushi's
 CLI
@@ -39,11 +35,8 @@ Distroless
 Dotnet
 Dragonwell
 Entrypoint
-entrypoint
-Executables
-executables
 Executable
-executable
+Executables
 FDD
 FDE
 GOOS=linux
@@ -64,7 +57,6 @@ JRE
 JVM
 JVMKill
 Kubernetes
-kubernetes
 LD_LIBRARY_PATH
 LTS
 Leiningen
@@ -116,7 +108,6 @@ SaaS
 SapMachine
 Stackdriver
 Subdirectory
-subdirectory
 TLS
 TOML
 Trivy
@@ -143,6 +134,10 @@ bp/go
 bp_name
 bp_repo
 build-an-app-as-a-graalvm-native-image-application
+buildpack
+buildpack's
+buildpack\-[a-z]+
+buildpacks
 cd
 certficate
 checksum
@@ -179,7 +174,9 @@ dotnet-publish-output295991778
 entrypoint
 env
 env-vars
+executable
 executable-jar:classpath
+executables
 filepath
 filesystem
 flagset
@@ -212,6 +209,7 @@ jvmkill
 kB
 kB/s
 kpack
+kubernetes
 language-family-buildpacks
 ldflags
 lifecycle
