@@ -27,6 +27,10 @@ jobs:
     - name: Check Links
       run: scripts/check-links.sh
 
+    - name: Check Links (ignore fragments)
+      if: always()
+      run: scripts/check-links.sh --strip-fragments
+
   check-spelling:
     name: Check Spelling in Docs
     runs-on: ubuntu-latest
