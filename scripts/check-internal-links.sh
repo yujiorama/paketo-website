@@ -39,7 +39,7 @@ function main() {
     clean=1;
   fi
 
-  if grep -irnq "(/docs" "${CONTENTDIR}" || grep -irnq "(docs" ; then
+  if grep -irnq "(/docs" "${CONTENTDIR}" || grep -irnq "(docs" "${CONTENTDIR}" ; then
     echo "${refMessage}";
     grep -irn "(/docs" "${CONTENTDIR}"
     grep -irn "(docs" "${CONTENTDIR}"
