@@ -6,7 +6,6 @@
 APM
 ASPNET
 Alibaba
-Applicaiton
 Azul
 BOM
 BPL_[A-Z_]*(=.*)?
@@ -25,7 +24,6 @@ CPEs
 CPython
 CVE
 CVEs
-Certficates
 Corretto
 CycloneDX
 CycloneDX\-[a-z]+
