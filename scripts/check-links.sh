@@ -132,10 +132,10 @@ check_links_quick() {
 
   util::print::info "Using quick search..."
   set +e
-  "${BIN_DIR}"/muffet  --buffer-size 8192 \
+  "${BIN_DIR}"/muffet --buffer-size 8192 \
                       --skip-tls-verification \
                       --exclude="localhost" \
-                      --exclude='(github\.com).*#' \
+                      --ignore-fragments \
                       --exclude='(github\.com)' \
                       "${address}${port:+:$port}";
   clean=$?
@@ -149,10 +149,10 @@ check_links_full() {
 
   util::print::info "Using complete search..."
   set +e
-  "${BIN_DIR}"/muffet  --buffer-size 8192 \
+  "${BIN_DIR}"/muffet --buffer-size 8192 \
                       --skip-tls-verification \
                       --exclude="localhost" \
-                      --exclude='(github\.com).*#' \
+                      --ignore-fragments \
                       --max-connections=1 \
                       "${address}${port:+:$port}";
   clean=$?
