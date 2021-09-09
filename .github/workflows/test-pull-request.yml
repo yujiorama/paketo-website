@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 16
         check-latest: true
-        cache: npm
+        cache: 'npm'
 
     - name: Install node Modules
       run: npm install
