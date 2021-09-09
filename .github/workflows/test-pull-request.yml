@@ -1,0 +1,44 @@
+name: Test Pull Request
+
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 16
+        check-latest: true
+
+    - uses: actions/checkout@v2.3.4
+      with:
+        submodules: false
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.84.0'
+        extended: true
+
+    - name: Install node Modules
+      run: npm install
+
+    - name: Build
+      run: hugo -d ./public
+
+    - name: Check HTML
+      uses: athackst/htmlproofer-action@main
+      with:
+        directory: "./public"
+        max_concurrency: 1
+
+  check-internal-links:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.4
+    - name: Check For Internal Links without Shortcodes
+      run: scripts/check-links.sh
