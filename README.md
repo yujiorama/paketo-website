@@ -27,7 +27,7 @@ npm install && hugo server
 
 ### Testing links
 
-To ensure that documentation cross-referencing is done correctly (i.e. no links are broken), we use built in Hugo shortcodes `{{< ref >}}` and `{{< relref >}}` in our documentation. (See [Hugo docs](https://gohugo.io/content-management/cross-references/)) As a heuristic check for non-shortcoded internal links in the docs markdown, run
+To ensure that documentation cross-referencing is done correctly (i.e. no links are broken), we use built in Hugo shortcodes `{{< ref >}}` and `{{< relref >}}` in our documentation. (See [Hugo docs](https://gohugo.io/content-management/cross-references/)). As a heuristic check for non-shortcoded internal links in the docs markdown, run
 ```bash
 scripts/check-internal-links.sh
 ```
