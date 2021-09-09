@@ -11,4 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
     - name: Check For Internal Links without Shortcodes
+      run: scripts/check-internal-links.sh
+    - name: Check Links (quick)
+      run: scripts/check-links.sh --quick
+    - name: Check Links (complete)
       run: scripts/check-links.sh
