@@ -41,11 +41,10 @@ function main() {
 
   searchStrings=( "(/docs" "(docs" "(#" ":#" )
   for search in "${searchStrings[@]}"; do
-    if [ "${clean}" -eq 0 ]; then
-      util::print::title "${refMessage}"
-    fi
-
     if grep -irnq "${search}" "${CONTENTDIR}"; then
+      if [ "${clean}" -eq 0 ]; then
+        util::print::title "${refMessage}"
+      fi
       grep -irn "${search}" "${CONTENTDIR}";
     fi
     clean=1
