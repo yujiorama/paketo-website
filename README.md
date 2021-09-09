@@ -46,7 +46,10 @@ scripts/check-links.sh
 ```
 
 ### Checking spelling
-The site uses the [spellchecker-cli](https://github.com/tbroadley/spellchecker-cli) to check spelling in documentation content. To quickly spellcheck the entire `/content` directory, run
+The site uses the
+[spellchecker-cli](https://github.com/tbroadley/spellchecker-cli) to check
+spelling in documentation content. To quickly spellcheck the entire `/content`
+directory, run
 ```bash
 scripts/check-spelling.sh
 ```
