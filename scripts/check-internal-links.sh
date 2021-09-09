@@ -46,9 +46,13 @@ function main() {
         util::print::title "${refMessage}"
       fi
       grep -irn "${search}" "${CONTENTDIR}";
+      clean=1
     fi
-    clean=1
-done
+  done
+
+  if [ "${clean}" -eq 0 ]; then
+    util::print::success "Internal links are all wrapped."
+  fi
 
   exit $clean
 }
