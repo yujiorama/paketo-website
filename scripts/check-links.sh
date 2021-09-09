@@ -149,7 +149,6 @@ check_links() {
   set +e
   "${BIN_DIR}"/muffet --buffer-size 8192 \
                       --skip-tls-verification \
-                      --verbose \
                       --timeout=20 \
                       --exclude="localhost" \
                       ${excludeGithub} \
