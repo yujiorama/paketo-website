@@ -115,3 +115,63 @@ lastmod = ["lastmod", ":fileModTime", ":default"]
     endLevel = 3
     ordered = false
     startLevel = 2
+
+defaultContentLanguage = "en"
+
+[languages]
+[languages.en]
+  languageName = "English"
+  weight = 1
+
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    identifier = "reference"
+    name = "Reference"
+    weight = 500
+
+    [languages.en.menu.main.params]
+      class = "docs-menu__section-header"
+
+  [[languages.en.menu.main]]
+    identifier = "howto"
+    name = "How To"
+    weight = 200
+
+    [languages.en.menu.main.params]
+      class = "docs-menu__section-header"
+
+  [[languages.en.menu.main]]
+    identifier = "concepts"
+    name = "Concepts"
+    weight = 300
+
+    [languages.en.menu.main.params]
+      class = "docs-menu__section-header"
+
+[languages.ja]
+  languageName = "日本語"
+  weight = 2
+
+  [[languages.ja.menu.main]]
+    identifier = "reference"
+    name = "リファレンス"
+    weight = 500
+
+    [languages.ja.menu.main.params]
+      class = "docs-menu__section-header"
+
+  [[languages.ja.menu.main]]
+    identifier = "howto"
+    name = "使い方"
+    weight = 200
+
+    [languages.ja.menu.main.params]
+      class = "docs-menu__section-header"
+
+  [[languages.ja.menu.main]]
+    identifier = "concepts"
+    name = "考え方"
+    weight = 300
+
+    [languages.ja.menu.main.params]
+      class = "docs-menu__section-header"
