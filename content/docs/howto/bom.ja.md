@@ -1,22 +1,26 @@
 ---
-title: "How to Access the Bill of Materials"
+title: "部品表（Bill of Materials）へアクセスする"
 weight: 345
 menu:
   main:
     parent: "howto"
-    name: "Access the Bill of Materials"
+    name: "部品表（Bill of Materials）へアクセスする"
 ---
 
-This documentation explains how to access the bill of materials (BOM) on an app image built using Paketo buildpacks. For more in-depth field definitions and details check out the [bill of materials concept page][concepts/bom].
+<!-- This documentation explains how to access the bill of materials (BOM) on an app image built using Paketo buildpacks. For more in-depth field definitions and details check out the [bill of materials concept page][concepts/bom]. -->
+このドキュメントでは、Paketo Buildpacks で作成したコンテナイメージの部品表（BOM：Bill of Materials）へアクセスする方法を説明します。
+フィールドの定義について詳しくは[BOM の考え方][concepts/bom]を参照してください。
 
+## Node.js のサンプルアプリケーションの BOM にアクセスする
 
-## Access the Bill of Materials on a Sample Node Application
+<!-- You can access the bill of materials in the metadata of any app image created with Paketo buildpacks. -->
+Paketo Buildpacks で作成したコンテナイメージは、メタデータから BOM にアクセスできます。
 
-You can access the bill of materials in the metadata of any app image created with Paketo buildpacks.
+<!-- 1. Follow the [Node.js Getting Started tutorial][tutorial/nodejs] to build the Node.js `paketo-demo-app` image. -->
+<!-- 2. Use the pack CLI retrieve the bill of materials metadata. -->
+1. [Node.js のチュートリアル]でコンテナイメージ `paketo-demo-app` を作成します。
+2. pack コマンドでメタデータの BOM にアクセスします
 
-1. Follow the [Node.js Getting Started tutorial][tutorial/nodejs] to build the Node.js `paketo-demo-app` image.
-
-2. Use the pack CLI retrieve the bill of materials metadata.
 {{< code/copyable >}}
 pack inspect-image paketo-demo-app --bom
 {{< /code/copyable >}}
@@ -144,12 +148,17 @@ pack inspect-image paketo-demo-app --bom
 }
 {{< /code/output >}}
 
-**Note:** At this time, only the Node.js and Java buildpacks support for the full set of bill of materials fields described in the [BOM concepts docs][concepts/bom]. There is an ongoing effort to build out the full BOM in all of our buildpacks, and the related documentation will be updated as new buildpacks are included.
+<!-- **Note:** At this time, only the Node.js and Java buildpacks support for the full set of bill of materials fields described in the [BOM concepts docs][concepts/bom]. There is an ongoing effort to build out the full BOM in all of our buildpacks, and the related documentation will be updated as new buildpacks are included. -->
+**注意**： BOM の全てのフィールド（[BOM の考え方][concepts/bom] に記載されている）に対応しているのは Paketo Node.js Buildpack と Paketo Java Buildpack で作成したコンテナイメージだけです。他の Buildpack でも完全な BOM 情報を含めるための取り組みは継続しているので、新たに対応する Buildpack が増えれば関連するドキュメントも更新されるはずです。
 
-## See Build-Time Dependencies in the BOM
-The bill of materials from the example above contains entries for every dependency on the final application image. However, it does not contain any dependencies that may have been used in the image build process but are not on the final image.
+## BOMでビルド時点の依存関係を確認する
+<!-- The bill of materials from the example above contains entries for every dependency on the final application image. However, it does not contain any dependencies that may have been used in the image build process but are not on the final image. -->
+前の例で説明したように、BOM には最終的なコンテナイメージが必要とする全ての依存関係が網羅されています。
+しかし、コンテナイメージをビルドするときにだけ必要な依存関係は含まれていません。
 
-Bill of materials entries are collected for build-time dependencies, but there is currently no way to access these entries. This will be available in future iterations of the bill of materials.
+<!-- Bill of materials entries are collected for build-time dependencies, but there is currently no way to access these entries. This will be available in future iterations of the bill of materials. -->
+BOM としてビルド時点の依存関係も収集しているのですが、現時点ではアクセスする方法が提供されていません。
+将来的にはアクセスできるようになるでしょう。
 
 <!-- References -->
 
