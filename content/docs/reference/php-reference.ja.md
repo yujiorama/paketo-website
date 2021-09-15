@@ -1,5 +1,5 @@
 ---
-title: "PHP Buildpack Reference"
+title: "PHP Buildpack リファレンス"
 menu:
   main:
     parent: reference
@@ -9,19 +9,21 @@ menu:
 
 {{% reference_exec_summary bp_name="Paketo PHP Buildpack" bp_repo="https://github.com/paketo-buildpacks/php" howto_docs_path="/docs/howto/php" %}}
 
+## 対応している依存対象
 
-## Supported Dependencies
-
-The PHP Paketo Buildpack supports several versions of PHP.
+<!-- The PHP Paketo Buildpack supports several versions of PHP.
 For more details on the specific versions supported in a given buildpack
-version, see the [release
-notes](https://github.com/paketo-buildpacks/php/releases).
+version, see the [release notes](https://github.com/paketo-buildpacks/php/releases). -->
+PHP Paketo Buildpack は PHP ランタイムの複数のバージョンに対応しています。
+具体的なバージョンは [Buildpack のリリースノート](https://github.com/paketo-buildpacks/php/releases) で確認してください。
 
-## Buildpack-Set Environment Variables
+## Buildpack の設定する環境変数
 
-The PHP CNB sets a number of environment variables during the `build` and
+<!-- The PHP CNB sets a number of environment variables during the `build` and
 `launch` phases of the app lifecycle. The sections below describe each
-environment variable and its impact on your app.
+environment variable and its impact on your app. -->
+PHP Buildpack はアプリケーションライフサイクルのビルドフェーズや起動フェーズでいくつかの環境変数を設定します。
+このセクションではアプリケーションに影響するであろう環境変数について説明します。
 
 ### APP_ROOT
 
