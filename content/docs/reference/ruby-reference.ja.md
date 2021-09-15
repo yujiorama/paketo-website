@@ -1,5 +1,5 @@
 ---
-title: "Ruby Buildpack Reference"
+title: "Ruby Buildpack リファレンス"
 menu:
   main:
     parent: reference
@@ -9,30 +9,34 @@ menu:
 
 {{% reference_exec_summary bp_name="Paketo Ruby Buildpack" bp_repo="https://github.com/paketo-buildpacks/ruby" howto_docs_path="/docs/howto/ruby" %}}
 
-## Supported Dependencies
+## 対応している依存対象
 
-The Ruby Paketo Buildpack supports several versions of
+<!-- The Ruby Paketo Buildpack supports several versions of
 [MRI](https://www.ruby-lang.org), [Bundler](https://bundler.io/), and common
 Ruby webservers and task runners.  For more details on the specific versions
-supported in a given buildpack version, see the [release
-notes](https://github.com/paketo-buildpacks/ruby/releases/latest).
+supported in a given buildpack version, see the [release notes](https://github.com/paketo-buildpacks/ruby/releases/latest). -->
+Ruby Paketo Buildpack は [MRI](https://www.ruby-lang.org) や [Bundler](https://bundler.io/) やさまざまな Ruby 用の Web サーバーや、タスクランナーの複数のバージョンに対応しています。
+具体的なバージョンは [Buildpack のリリースノート](https://github.com/paketo-buildpacks/ruby/releases) で確認してください。
 
-## Package Management
+## パッケージ管理
 
-The Ruby Buildpack uses [Bundler](https://bundler.io/) to install and manage
+<!-- The Ruby Buildpack uses [Bundler](https://bundler.io/) to install and manage
 the gems needed to run your application. Including a `Gemfile` in your app
-source code instructs the [`bundle-install`
-buildpack](https://github.com/paketo-buildpacks/bundle-install) to vendor your
-dependencies using `bundle install`.
+source code instructs the [`bundle-install` buildpack](https://github.com/paketo-buildpacks/bundle-install) to vendor your
+dependencies using `bundle install`. -->
+Ruby Buildpack はアプリケーションに必要な gem をインストールしたり管理したりするために [Bundler](https://bundler.io/) を使用します。
+アプリケーションのソースコードに `Gemfile` を入れると、[`bundle-install` buildpack](https://github.com/paketo-buildpacks/bundle-install) が `bundle install` コマンドで依存パッケージをインスト―ルします。
 
-## Webservers & Task Runners
+## Web サーバーとタスクランナー
 
-The Ruby Buildpack supports a number of webservers and task runners that are
+<!-- The Ruby Buildpack supports a number of webservers and task runners that are
 useful for running Ruby applications. If your application uses one of these
 tools, it will be automatically detected and a start command for your
-application will be assigned when building your application container.
+application will be assigned when building your application container. -->
+Ruby Buildpack は、Ruby アプリケーションの実行を支援するさまざまな Web サーバーとタスクランナーに対応しています。
+Buildpack は自動的にアプリケーションの使っているツールを検出して、コンテナイメージの起動コマンドを設定します。
 
-### Webservers
+### Web サーバー
 
 * [Passenger](http://github.com/paketo-buildpacks/passenger)
 * [Puma](http://github.com/paketo-buildpacks/puma)
@@ -40,20 +44,26 @@ application will be assigned when building your application container.
 * [Thin](http://github.com/paketo-buildpacks/thin)
 * [Unicorn](http://github.com/paketo-buildpacks/unicorn)
 
-### Task Runners
+### タスクランナー
 
 * [Rake](http://github.com/paketo-buildpacks/rake)
 
-## Rails Asset Pipeline
-The [Paketo Rails Assets Buildpack](http://github.com/paketo-buildpacks/rails-assets) is a [component buildpack](/docs/concepts/buildpacks/#component-buildpacks) included in the Ruby Buildpack. It supports Rails apps (Rails version >= 5.0) that need asset precompilation.
+## Ruby on Rails のアセットパイプライン
+<!-- The [Paketo Rails Assets Buildpack](http://github.com/paketo-buildpacks/rails-assets) is a [component buildpack](/docs/concepts/buildpacks/#component-buildpacks) included in the Ruby Buildpack. It supports Rails apps (Rails version >= 5.0) that need asset precompilation. -->
+[Paketo Rails Assets Buildpack](http://github.com/paketo-buildpacks/rails-assets) は Ruby Buildpack に含まれる [コンポーネント Buildpack](/docs/concepts/buildpacks/#component-buildpacks) の1つです。
+Ruby on Rails （5.0以上）のアプリケーションについて、静的アセットの事前コンパイルに対応しています。
 
-The buildpack runs bundle exec rails assets:precompile for the app, and works with any of the supported Ruby webservers listed above.
+<!-- The buildpack runs bundle exec rails assets:precompile for the app, and works with any of the supported Ruby webservers listed above. -->
+Buildpack はビルド処理で `bundle exec rails assets:precompile` を実行します。
+また、前述のさまざまな Web サーバーと連携して動作するようになっています。
 
-## Buildpack-Set Environment Variables
+## Buildpack の設定する環境変数
 
-The Ruby CNB sets a few environment variables during the `build` and `launch`
+<!-- The Ruby CNB sets a few environment variables during the `build` and `launch`
 phases of the app lifecycle. The sections below describe each environment
-variable and its impact on your app.
+variable and its impact on your app. -->
+Ruby Buildpack はアプリケーションライフサイクルのビルドフェーズや起動フェーズでいくつかの環境変数を設定します。
+このセクションではアプリケーションに影響するであろう環境変数について説明します。
 
 ### `GEM_PATH`
 
